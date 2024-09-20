@@ -40,17 +40,18 @@ public class Exercise {
         petrol [2][0] = 30 ;petrol [2][1] = 49 ;petrol [2][2] = 17; 
 
         for(int row =0; row<car.length;row ++){
-            //carUsage.getCarBrand();
+           
             for (int col =0; col < car[row].length;col++){
-                //carUsage.getPetrolUsage();
-                //System.out.println(carUsage.getCarBrand() + " "+ carUsage.getPetrolUsage());
+                
                 carUsage.setCarBrand(car[row][col]);
                 carUsage.setPetrolUsage(petrol[row][col]);
+         
                 System.out.println(carUsage.getCarBrand()+" has used "+ carUsage.getPetrolUsage() + " litres");
-               //System.out.println(car[row][col]+" has used "+ petrol[row][col] + " litres. ");
+               
 
             }
         }
+
 
     }
 }
