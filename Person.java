@@ -1,4 +1,4 @@
-package controllers;
+//package controllers;
 
 public class Person {
 
@@ -7,12 +7,12 @@ public class Person {
     private int years;
     private double avgGpa;
     
-    public Person (String gpa, double score, int years, double avgGpa){
+    public Person (String gpa, double score, int years){
         //can change as many times as I want
         this.gpa = gpa;
         this.score = score;
         this.years = years;
-        this.avgGpa = avgGpa;
+        //this.avgGpa = avgGpa;
     }
 
     // no static because 

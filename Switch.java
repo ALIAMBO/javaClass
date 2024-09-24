@@ -1,4 +1,4 @@
-package controllers;
+//package controllers;
 public class Switch {
     public static void main(String[] args) {
         int dayOfWeek = 3;
