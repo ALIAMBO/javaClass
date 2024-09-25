@@ -1,4 +1,11 @@
 
+import java.util.function.Predicate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.Period;
+import java.time.LocalDate;
+import java.time.LocalDate;
+
 public class Employee {
     
     private String name = new String(); 
@@ -63,26 +70,48 @@ public class Employee {
     }
 
     public double assignBonus(){
+       
 
         double bonus =0;
 
-        if (baseSalary >= 50000) {
+        if (baseSalary >=5000) {          
             bonus = baseSalary * 0.1 ;
-        } else if (baseSalary >= 30000 && baseSalary <50000) {
+        }
+         else if (baseSalary >= 3000 && baseSalary <5000) {
             bonus = baseSalary * 0.05  ;
-        }else if(baseSalary < 30000){
-           bonus =0;
+        }
+        else {
+            bonus =0;        
         }
 
         return bonus;
     }
 
     public void display(){
+        Predicate<Double>isGreaterThanThen = (num) -> num >1000;
+        
+        LocalDateTime dateT = LocalDateTime.now();
+        LocalDate dateD = LocalDate.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
+        String formatter = format.format(dateT);
+
+        LocalDate date = LocalDate.of(2024, 8, 1);
+        Period period = Period.between(dateD, date);
 
         System.out.println("----------------------------------------");
+        System.out.println("Time : " + formatter);
+        System.out.println("Period : " + period);
         System.out.println("Name : "+ name);
         System.out.println("Total Salary is " + totalSalary());
         System.out.println("Bonus is " + assignBonus());
+
+        if (isGreaterThanThen.test(assignBonus())) {
+            System.out.println("Congratulations you got a bonus :)");
+        }else{
+            System.out.println("No bonus :(");
+        }
+
+
 
     }
 

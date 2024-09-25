@@ -74,38 +74,78 @@ public class Exercise2Week2 {
 
     public static void main(String[] args) {
         Exercise2Week2 student = new Exercise2Week2(null,0, 0, 0);
-        Scanner scanner = new Scanner(System.in);
-       
-
-        // Defining array to store names and scores for 5 students
-        // String[] setName = new String[5];
-        // int[][] scores = new int[5][3]; // 5 students and 3 subjects per student
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Please enter student's details:");
-
-            // Get student name
-            System.out.println("Name: ");
-            String name = scanner.nextLine(); 
-
-            // Get scores for each subject
-            System.out.println("Math's score: ");
-            int math = scanner.nextInt(); 
-            
-            System.out.println("Science's score: ");
-             int science= scanner.nextInt();
-            
-            System.out.println("English's score: ");
-            int english= scanner.nextInt(); 
-            
-            //scanner.nextLine(); 
-
-             student = new Exercise2Week2(name, math, science, english);
-
-             // Display student's details
-         System.out.println("Name: " + student.getName() + " "+ student.calculateAverage()+ " " + student.assignedGrade());
+        //Scanner scanner = new Scanner(System.in);
       
-        }
+
+        try { 
+
+            String [ ] name = {"Abuya", "Abiya", "Mira", "Miro", "Maru"};
+
+            int[] scores= new int[10];
+            
+            for(int row=0; row<scores.length; row++){
+                student.setAvgScores(scores[row]);
+                student.setName(name[row]);
+                //String subject = " ";
+    
+                System.out.println("Name " + student.getName());
+    
+                // for(int col=0; col<scores.length; col++){
+                //     int[] s = student.getScore();
+    
+                //     if(col == 0){
+                //         subject = "Math ";
+                //     }else if(col == 1){
+                //         subject = "Science ";
+                //     }
+                //     else if(col == 2){
+                //         subject = "English ";
+                //     }                
+                // }
+                
+            //    System.out.println(subject);
+               
+                System.out.print("Average Score: ");
+                student.calculateAverage();
+                System.out.print("Grade: ");
+                student.assignedGrade();
+                System.out.println("-------------------------------");
+            }            
+                
+            } catch (ArrayIndexOutOfBoundsException e) {
+    
+                System.out.println("Bad catch 404 : " + e.getMessage());
+            }finally{
+                System.out.println("Proceed for another try.");
+            }
+
+            System.out.println("The programme will continue.");
+
+        // for (int i = 0; i < 3; i++) {
+        //     System.out.println("Please enter student's details:");
+
+        //     // Get student name
+        //     System.out.println("Name: ");
+        //     String name = scanner.nextLine(); 
+
+        //     // Get scores for each subject
+        //     System.out.println("Math's score: ");
+        //     int math = scanner.nextInt(); 
+            
+        //     System.out.println("Science's score: ");
+        //      int science= scanner.nextInt();
+            
+        //     System.out.println("English's score: ");
+        //     int english= scanner.nextInt(); 
+            
+        //     //scanner.nextLine(); 
+
+        //      student = new Exercise2Week2(name, math, science, english);
+
+        //      // Display student's details
+        //  System.out.println("Name: " + student.getName() + " "+ student.calculateAverage()+ " " + student.assignedGrade());
+      
+        // }
          
 
         //scanner.close();
