@@ -1,9 +1,7 @@
 
 import java.util.function.Predicate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.Period;
-import java.time.LocalDate;
 import java.time.LocalDate;
 
 public class Employee {
@@ -91,7 +89,7 @@ public class Employee {
         Predicate<Double>isGreaterThanThen = (num) -> num >1000;
         
         //LocalDateTime dateT = LocalDateTime.now();
-        LocalDate dateD = LocalDate.now();
+        //LocalDate dateD = LocalDate.now();
         
         LocalDate dateBeginning = LocalDate.of(2024, 8, 1);
         LocalDate dateEnd = LocalDate.of(2024, 8, 31);
@@ -100,7 +98,7 @@ public class Employee {
         String formateBeginning = format.format(dateBeginning);
         String formateEnding = format.format(dateEnd);
 
-        Period period = Period.between(dateD, dateEnd);
+        Period period = Period.between(dateBeginning, dateEnd);
 
         System.out.println("----------------------------------------");
         System.out.println("Date from " + formateBeginning + " to " + formateEnding);
@@ -114,8 +112,6 @@ public class Employee {
         }else{
             System.out.println("No bonus :(");
         }
-
-        
 
     }
 
