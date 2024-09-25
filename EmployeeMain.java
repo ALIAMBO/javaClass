@@ -42,6 +42,8 @@ public class EmployeeMain {
             employee[j].display();
         }
 
+        System.out.println("----------------------------------------");
+
         // for(int i =0 ; i <employee.length; i++){
             
 

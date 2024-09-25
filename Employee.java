@@ -90,17 +90,21 @@ public class Employee {
     public void display(){
         Predicate<Double>isGreaterThanThen = (num) -> num >1000;
         
-        LocalDateTime dateT = LocalDateTime.now();
+        //LocalDateTime dateT = LocalDateTime.now();
         LocalDate dateD = LocalDate.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
-        String formatter = format.format(dateT);
+        
+        LocalDate dateBeginning = LocalDate.of(2024, 8, 1);
+        LocalDate dateEnd = LocalDate.of(2024, 8, 31);
 
-        LocalDate date = LocalDate.of(2024, 8, 1);
-        Period period = Period.between(dateD, date);
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        String formateBeginning = format.format(dateBeginning);
+        String formateEnding = format.format(dateEnd);
+
+        Period period = Period.between(dateD, dateEnd);
 
         System.out.println("----------------------------------------");
-        System.out.println("Time : " + formatter);
-        System.out.println("Period : " + period);
+        System.out.println("Date from " + formateBeginning + " to " + formateEnding);
+        System.out.println("Period : " + period +"ay(s)");
         System.out.println("Name : "+ name);
         System.out.println("Total Salary is " + totalSalary());
         System.out.println("Bonus is " + assignBonus());
@@ -111,7 +115,7 @@ public class Employee {
             System.out.println("No bonus :(");
         }
 
-
+        
 
     }
 
